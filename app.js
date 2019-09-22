@@ -14,4 +14,6 @@ const log = console.log
 
 // console.log(validator.isEmail('miguel@email.com'))
 
-log(chalk.green('SUCCESS'))
+log(chalk.green('SUCCESS'));
+
+console.log(process.argv)
