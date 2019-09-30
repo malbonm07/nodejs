@@ -1,8 +1,7 @@
 // const fs = require('fs');
 const chalk = require('chalk');
 const yargs = require('yargs');
-const validator = require('validator');
-const getData = require('./notes.js');
+const notes = require('./notes');
 
 yargs.command({
     command: "add",
@@ -20,7 +19,7 @@ yargs.command({
         },
     },
     handler: function(yargs) {
-        console.log(yargs.title)
+        notes.addNotes(yargs.title, yargs.body)
     }
 })
 
@@ -28,8 +27,8 @@ yargs.command({
 yargs.command({
     command: "remove",
     describe: "remove a note",
-    handler: function() {
-        console.log("remove a note")
+    handler: function(yargs) {
+        notes.removeNote(yargs.title)
     }
 })
 
@@ -48,9 +47,6 @@ yargs.command({
         console.log("read a note")
     }
 })
-
-
-
 
 
 console.log(yargs.argv)
