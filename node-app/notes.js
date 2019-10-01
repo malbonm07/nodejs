@@ -2,7 +2,8 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 const getNotes = () => {
-
+    const notes = loadNotes()
+    console.log(notes)
 }
 
 const addNotes = (title, body) => {
@@ -56,5 +57,6 @@ const checkDuplicate = (notes, title) => {
 
 module.exports = {
     addNotes,
-    removeNote
+    removeNote,
+    getNotes
 }
