@@ -3,7 +3,8 @@ const chalk = require('chalk');
 
 const getNotes = () => {
     const notes = loadNotes()
-    console.log(notes)
+    console.log(chalk.bgYellow(chalk.black(" Notes titles: ")))
+    notes.forEach((note) => console.log(chalk.green(note.title)) )
 }
 
 const addNotes = (title, body) => {
