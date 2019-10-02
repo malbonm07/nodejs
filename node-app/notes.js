@@ -7,6 +7,19 @@ const getNotes = () => {
     notes.forEach((note) => console.log(chalk.green(note.title)) )
 }
 
+const readNotes = (title) => {
+    const notes = loadNotes();
+    const noteSelected = notes.filter((note) => note.title === title)
+
+    if(noteSelected.length) {
+            console.log(`Note title: ${chalk.green(noteSelected[0].title)}`)
+            console.log(`Note body: ${chalk.green(noteSelected[0].body)}`)
+    }
+    else {
+        console.log(chalk.red(`Error: ${title} not found`))
+    }
+}
+
 const addNotes = (title, body) => {
     const notes = loadNotes();
 
@@ -59,5 +72,6 @@ const checkDuplicate = (notes, title) => {
 module.exports = {
     addNotes,
     removeNote,
-    getNotes
+    getNotes,
+    readNotes
 }
