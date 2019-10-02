@@ -33,6 +33,7 @@ const addNotes = (title, body) => {
     } else {
         console.log(`Note with the name: ${chalk.bgBlue(title)  } already exists`)
     }
+
 }
 
 const removeNote = (title) => {
